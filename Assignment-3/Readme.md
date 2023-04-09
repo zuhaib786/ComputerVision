@@ -48,7 +48,7 @@ h_{1i}h_{1j} \\ h_{1i}h_{2j} + h_{2i}h_{1j}\\ h_{3i}h_{1j} + h_{1i}h_{3j}\\ h_{2
 ```
 We obtain two equation from one homography matrix viz
 ```math
-\displaystyle V_{12}^Tb = 0$ and $\displaystyle (V_{11}^T - V_{22}^T)b =0
+\displaystyle V_{12}^Tb = 0 \text{ and }\displaystyle (V_{11}^T - V_{22}^T)b =0
 ```
 
 - __createMatrix__: Form matrix of equations given the list of homographies

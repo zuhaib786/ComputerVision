@@ -21,11 +21,15 @@ Fields: <br>
 
 Methods
 - __createMatrix__: Normalizes images coordinates and world coordinates. and then forms matrix A of the system of equation for finding homography matrix H. For references: https://www.ipb.uni-bonn.de/html/teaching/photo12-2021/2021-pho1-22-Zhang-calibration.pptx.pdf
-$$A = \begin{bmatrix}A_1\\ A_2\\ A_3\\ \vdots \\ A_n \end{bmatrix}$$ 
-$$A_i =\begin{bmatrix}
+```math
+A = \begin{bmatrix}A_1\\ A_2\\ A_3\\ \vdots \\ A_n \end{bmatrix}
+```
+```math
+A_i =\begin{bmatrix}
 -X_i& -Y_i& -1& 0& 0& 0& x_iX_i&x_iY_i& x_i\\
 0& 0 & 0 & -X_i & -Y_i & -1 & y_iX_i & y_iY_i & y_i
-\end{bmatrix} $$
+\end{bmatrix}
+```
 - __getHomography__: Takes input as the checkerboard image and outputs the camera homography matrix. This solves the system of equation $$Ah = 0$$ where A is as described in createMatrix function above.
 
 File: Zhang.py<br>
@@ -37,11 +41,15 @@ Fields: <br>
 
 Methods:
 - __createVector__: Vector for forming orthonormality constraints of rows of Rotation matrix
-$$V_{ij} = \begin{bmatrix}
+```math
+V_{ij} = \begin{bmatrix}
 h_{1i}h_{1j} \\ h_{1i}h_{2j} + h_{2i}h_{1j}\\ h_{3i}h_{1j} + h_{1i}h_{3j}\\ h_{2i}h_{2j}\\ h_{3i}h_{2j} + h_{2i}h_{3j}\\h_{3i}h_{3j}
-\end{bmatrix}$$
+\end{bmatrix}
+```
 We obtain two equation from one homography matrix viz
-$\displaystyle V_{12}^Tb = 0$ and $\displaystyle (V_{11}^T - V_{22}^T)b =0$
+```math
+\displaystyle V_{12}^Tb = 0$ and $\displaystyle (V_{11}^T - V_{22}^T)b =0
+```
 
 - __createMatrix__: Form matrix of equations given the list of homographies
 

@@ -40,22 +40,34 @@ Fields:
 - __detector__: HarriscCornerDetector. Used to calculate keypoints
 - __match__: Matching, used to calculate matching between keypoints
 - __createMatrix__: Given matches as $((x_1, y_1)\rightarrow (x_1', y_1'), (x_2, y_2)\rightarrow (x_2', y_2'), \ldots, (x_n', y_n'))$ creates the matrix.
-$\begin{bmatrix}x_1 & y_1& 1&0& 0&0\\
+```math
+\begin{bmatrix}x_1 & y_1& 1&0& 0&0\\
                 0 & 0& 0 & x_1& y_1& 1\\
                 x_2 & y_2 & 1& 0& 0& 0\\
                 0 & 0 & 0 & x_2 & y_2 & 1\\
                 \vdots & \vdots & \vdots & \vdots & \vdots & \vdots \\
                 x_n & y_n & 1& 0 & 0 & 0\\
                 0 & 0& 0 & x_n& y_n&1
-\end{bmatrix}$.<br>
+\end{bmatrix}
+```
+.<br>
 We only pass the source points and denote the matrix by $A$
 - __createLoad__: Given matches as $((x_1, y_1)\rightarrow (x_1', y_1'), (x_2, y_2)\rightarrow (x_2', y_2'), \ldots, (x_n', y_n'))$ creates the matrix.
-$\begin{bmatrix}x_1'\\y_1'\\x_2'\\y_2'\\ \vdots\\x_n'\\y_n' 
-\end{bmatrix}$<br>We only pass the destination points and denote the matrix by $b$
-- __estimateParams__: Linear regression estimate for the equation $At = b$, where $t = \begin{bmatrix}
+```math
+\begin{bmatrix}x_1'\\y_1'\\x_2'\\y_2'\\ \vdots\\x_n'\\y_n' 
+\end{bmatrix}
+```
+<br>We only pass the destination points and denote the matrix by $b$
+- __estimateParams__: Linear regression estimate for the equation $At = b$, where
+```math
+t = \begin{bmatrix}
 a \\b\\c\\d\\e\\f
-\end{bmatrix}$ and the affine transform is then given by
-$\begin{bmatrix}a & b & c\\ d & e & f\end{bmatrix}$
+\end{bmatrix}
+``` 
+and the affine transform is then given by
+```math
+\begin{bmatrix}a & b & c\\ d & e & f\end{bmatrix}
+```
 - __builtinEstimator__: Use ``cv2.estimateAffine2D`` to estimate the affine matrix params
 - __getMatches__: Same as ``Matching.match`` function
 - __getAffine__: similar to ``Matching.findAffine``. Instead of homography, it finds the affine matrix

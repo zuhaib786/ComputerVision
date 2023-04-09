@@ -16,9 +16,9 @@ We set the probability of an object being present in the bounding box be given b
 |Model performs poorly when a moving objects stands still for some time as it amalgamates it to the background. This can be seen for the case of "Hall And Monitor" data and "Candela_m1.10" data| Model relatively robust when a moving objects stands still for some time|
 
 # Failure cases of the method
-1. The kernel width $\sigma$ plays a very important role in the prediction accuracy by the model. The calculation for the value $\displaystyle \exp\left\{ - (x - \mu)^2/(\sigma^2)\right\}$ overflows very quickly if the variance is small and hence a lot of false detections occur because of that.<br>
+1. The kernel width $\sigma$ plays a very important role in the prediction accuracy by the model. The calculation for the value $\displaystyle \exp\left( - \displaystyle \frac{(x - \mu)^2}{\sigma^2}\right)$ overflows very quickly if the variance is small and hence a lot of false detections occur because of that.<br>
 __Hence on a still scene a lot false detections can occur because of this method.__<br>
-2. This model does not work well for detecting objects with varying speeds because if an object is slow, it get amalgamated with the background and if the adaptation(learning) rate is slow, then the model does not adapt quickly to the background changes.
+2. This model does not work well for detecting objects with varying speeds because if an object is slow, it gets amalgamated with the background and if the adaptation(learning) rate is slow, then the model does not adapt quickly to the background changes.
 
 # Links to videos
 [Link](https://csciitd-my.sharepoint.com/:f:/g/personal/mt6180798_iitd_ac_in/EuNHBSCUFoBGne-TcmgAvX0BTFb4WtbbJCE3Nm7-i6GoHg?e=OxN0tX)

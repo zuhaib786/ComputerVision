@@ -69,4 +69,19 @@ Finally $t$ is obtained from the observation that $h_3 = Kt$
 The extrinsic and intrinsic parameters obtained are used to project the corners of the cube $$[0, 0, 0], [0, 3, 0], [3,0, 0], [3, 3, 0], [0, 0, 3], [0, 3, 3], [3, 0, 3], [3, 3,3]$$ onto the image.<br>
 This forms an augmented image in which a cube is placed on the checkerboard<br>
 
-Results: https://csciitd-my.sharepoint.com/:f:/g/personal/mt6180798_iitd_ac_in/EhaanyWx4L9PpXgnCOTbG08BndCkfUUNs2aDRiQUonAgpg?e=u1re8o
+__Results__ <br>
+Augmented Images generated<br>
+- ![Image1](image0.jpg)
+- ![Image2](image1.jpg)
+- ![Image3](image2.jpg)
+- ![Image4](image3.jpg)
+- ![Image5](image4.jpg)
+
+Intrinsic Matrix obtained
+```math
+\begin{bmatrix}
+1.23980967e+03 & 7.04909301e-02 & 6.21308602e+02\\
+ 0.00000000e+00 & 1.24114175e+03 & 7.94609826e+02\\
+ 0.00000000e+00 & 0.00000000e+00 & 1.00000000e+00
+\end{bmatrix}
+```
